@@ -1,7 +1,6 @@
 package com.bridgelabz.addressbooksystem;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Scanner;
 public class AddressBookSystem {
@@ -15,8 +14,6 @@ public class AddressBookSystem {
         System.out.println(" 0. Exit. ");
         System.out.println(" 1. Create contact. ");
         System.out.println(" 2. Add contact. ");
-        System.out.println(" 3. Edit contact. ");
-        System.out.println(" 4. Delete contact. ");
         menu = sc.nextInt();
 
         while (menu != 0) {
@@ -66,23 +63,10 @@ public class AddressBookSystem {
                     menu = sc.nextInt();
                 }
                 break;
-
-            case 3:
-                System.out.println("Enter First Name of contact that you would like to edit: ");
-                int index = sc.nextInt();
-                System.out.println("Updated name is: ");
-                break;
-            case 4:
-                System.out.println("Enter First Name of contact that you would like to delete: ");
-                choice = sc.next();
-                contact.remove(choice);
-                break;
             }
             System.out.println(" 0. Exit. ");
             System.out.println(" 1. Create contact. ");
             System.out.println(" 2. Add contact. ");
-            System.out.println(" 3. Edit contact. ");
-            System.out.println(" 4. Delete contact. ");
             menu = sc.nextInt();
         }
         System.out.println("Goodbye!");
@@ -98,24 +82,4 @@ public class AddressBookSystem {
     	Contact person = new Contact(firstName, lastName, address , city, state, zip, phoneNumber, email);
         contact.add(person);
         }
-    private void editData(String firstName, String lastName, String address, String city, String state, String zip,
-			String phoneNumber, String email) {
-    	Contact person = new Contact(firstName, lastName, address , city, state, zip, phoneNumber, email);
-        	 boolean index;
-			if (index = contact != null) {
-             	boolean temp=index;
-        	return;
-        }
-    }
-    private void deleteByFirstName(String firstName) {
-    	  for (Iterator<Contact> iterator = contact.iterator(); iterator.hasNext();) {
-    		  Contact temp = iterator.next();
-    	    if (temp.getFirstName().equalsIgnoreCase(firstName)) {
-    	      iterator.remove();
-    	      return;
-    	    }
-    	  }
-
-    	  System.out.println("No contact with first name " + firstName + " was found.");
-    	}
 }
